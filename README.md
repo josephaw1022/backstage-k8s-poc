@@ -59,7 +59,7 @@ yarn
 ### 2. Set up the Kubernetes cluster and demo resources
 
 ```bash
-./quick-start-k8s.sh
+bash ./quick-start-k8s.sh
 ```
 
 This script will:
@@ -72,7 +72,7 @@ This script will:
 ### 3. Configure local Backstage to access the cluster
 
 ```bash
-./quick-start-local-app-config.sh
+bash ./quick-start-local-app-config.sh
 ```
 
 This script will:
