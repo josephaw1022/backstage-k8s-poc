@@ -12,12 +12,15 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: example-website
+  annotations:
+    backstage.io/kubernetes-label-selector: 'app=example-website'
 spec:
   type: website
   lifecycle: experimental
   owner: guests
   system: examples
   providesApis: [example-grpc-api]
+
 ---
 # https://backstage.io/docs/features/software-catalog/descriptor-format#kind-api
 apiVersion: backstage.io/v1alpha1
@@ -39,3 +42,17 @@ spec:
     message ExampleMessage {
       string example = 1;
     };
+
+
+
+---
+
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-resource
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: kind-cluster
+spec:
+  type: kubernetes-cluster
+  owner: guests
+  system: examples
